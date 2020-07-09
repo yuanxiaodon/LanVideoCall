@@ -12,10 +12,18 @@ android 局域网可视对讲
     implementation 'com.yanzhenjie:permission:2.0.0-rc4'
     
 三:初始化aar库
+
    NettyCore.me().init(targetIp, 8888, 9999);
    
 四:初始化可视对讲
    boolean isSend = true;
+   
+   private SurfaceView localView;
+   
+   private SurfaceView remoteView;
+   
+    
+    
    TenetCore.me().initCall(new KMessageCall() {
                                     @Override
                                     public void onTcpClientReceive(Object msg) {
@@ -78,10 +86,12 @@ android 局域网可视对讲
                 });
                 
  五:启动编码
+ 
     TenetCore.me().startEncode();
     
     
  六:停止编码
+ 
       TenetCore.me().stopEncode();
       
       
